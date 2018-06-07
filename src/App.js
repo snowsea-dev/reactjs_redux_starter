@@ -14,7 +14,6 @@ class App extends Component {
           <Root />
         </ConnectedRouter>
       </Provider>
-      
     )
   }
 }
