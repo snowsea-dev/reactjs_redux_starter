@@ -1,6 +1,6 @@
 import Immutable from 'seamless-immutable'
 import { createReducer } from 'reduxsauce'
-import { Types } from 'redux/actions/global'
+import { Types } from '../actions/global'
 
 export const initialState = Immutable({
   status: {},
