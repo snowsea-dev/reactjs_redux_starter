@@ -1,4 +1,5 @@
 // utils for redux actions and creators
+
 export const request = (type) => `${type}/request`
 export const success = (type) => `${type}/success`
 export const failure = (type) => `${type}/failure`
