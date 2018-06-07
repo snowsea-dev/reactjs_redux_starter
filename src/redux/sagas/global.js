@@ -35,8 +35,8 @@ function* listenAction(action) {
       yield put(Creators.updateStates({ status: newStatus }))
       
       if (app.alertFailure) { // show failure action message here
-        const { err, skipAlert, duration } = action.payload
-        if (err && skipAlert !== true) { // unless action.payload.skipAlert is true
+        const { err, showAlert } = action.payload
+        if (err && showAlert === false) { // unless action.payload.showAlert is false
           // TODO: show message here
         }
       }
