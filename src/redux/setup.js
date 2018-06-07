@@ -3,7 +3,9 @@ import createSagaMiddleware from 'redux-saga'
 import createBrowserHistory from 'history/createBrowserHistory'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 import Immutable from 'seamless-immutable'
+
 import rootReducer from './reducers'
+import sagas from './sagas'
 
 function setupStore(initialState = Immutable({})) {
   const sagaMiddleware = createSagaMiddleware()
@@ -33,9 +35,12 @@ function setupStore(initialState = Immutable({})) {
     compose(...enhancers)
   )
 
-  // Extensions
+  // extensions
   store.runSaga = sagaMiddleware.run
   store.history = history
+
+  // run sagas
+  sagas.forEach(saga => store.runSaga(saga))
 
   return store
 }
