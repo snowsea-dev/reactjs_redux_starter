@@ -6,10 +6,9 @@ export const initialState = Immutable({
   status: {},
 })
 
-const updateStates = (state, action) => ({
-  ...state,
-  ...action.payload,
-})
+const updateStates = (state, action) => {
+  return Immutable.merge(state, action.payload)
+}
 
 const handlers = {
   [Types.UPDATE_STATES]: updateStates,
