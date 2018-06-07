@@ -36,7 +36,7 @@ function* listenAction(action) {
       
       if (app.alertFailure) { // show failure action message here
         const { err, showAlert } = action.payload
-        if (err && showAlert === false) { // unless action.payload.showAlert is false
+        if (err && showAlert !== false) { // unless action.payload.showAlert is false
           // TODO: show message here
         }
       }
