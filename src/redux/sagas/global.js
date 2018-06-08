@@ -10,7 +10,7 @@ import { app } from 'configs'
  */
 function* listenAction(action) {
   try {
-    const { status } = yield select(state => state.get('global'))
+    const { status } = yield select(_ => _.global)
     let newStatus
     
     if (action.type.endsWith('/request')) { // request action
