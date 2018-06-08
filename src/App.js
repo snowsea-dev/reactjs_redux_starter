@@ -5,6 +5,8 @@ import { ConnectedRouter } from 'connected-react-router'
 import setupStore from 'redux/setup'
 import Root from 'containers/Root'
 
+import 'styles/styles.css'
+
 const store = setupStore()
 class App extends Component {
   render() {
